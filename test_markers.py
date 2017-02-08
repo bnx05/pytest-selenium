@@ -9,6 +9,7 @@ browser.get("https://start.engagespark.com/sign-in/")
 
 
 @pytest.mark.login_test
+@pytest.mark.attribute_test
 def test_assert_empty_login_form():
     assert browser.find_element_by_name("login").get_attribute("value") == ""
     assert browser.find_element_by_name("password").get_attribute("value") == ""
@@ -23,7 +24,7 @@ def test_login_empty_fields():
 class TestSignupPage:
 
     @pytest.mark.signup_test
-    @pytest.mark.xfail(reason="needs wait")
+    @pytest.mark.attribute_test
     def test_assert_empty_signup_form(self):
         assert browser.find_element_by_name("login").get_attribute("value") == ""
         assert browser.find_element_by_name("password1").get_attribute("value") == ""
