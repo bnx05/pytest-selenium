@@ -5,6 +5,7 @@ from selenium import webdriver
 
 
 browser = webdriver.Firefox()
+browser.maximize_window()
 browser.get("https://start.engagespark.com/sign-in/")
 
 
