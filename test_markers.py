@@ -16,10 +16,12 @@ def test_assert_empty_login_form():
     assert browser.find_element_by_name("password").get_attribute("value") == ""
 
 
+# uncomment clicking and comment out assertion to make the test fail
 @pytest.mark.login_test
-@pytest.mark.xfail(reason="button is disabled")
-def test_login_empty_fields():
-    browser.find_element_by_xpath("//button[contains(text(), 'Login')]").click()
+# @pytest.mark.xfail(reason="button is disabled")
+def test_login_button_disabled():
+    # browser.find_element_by_xpath("//button[contains(text(), 'Login')]").click()
+    assert not browser.find_element_by_xpath("//button[contains(text(), 'Login')]").is_enabled()
 
 
 class TestSignupPage:
