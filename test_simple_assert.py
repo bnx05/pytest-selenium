@@ -12,7 +12,8 @@ def test_open_engagespark_homepage():
     assert "Home" in browser.title
 
 
-@pytest.mark.xfail(strict=True)
+# add xfail marker to force the test to fail
+# @pytest.mark.xfail(strict=True)
 def test_login_link_available_in_homepage():
     browser.get("https://www.engagespark.com/")
     assert browser.find_element_by_link_text("login")
